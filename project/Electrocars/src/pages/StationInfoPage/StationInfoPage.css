@@ -34,3 +34,27 @@
   #station-info-page{
     padding-bottom: 50px;
   }
+  @media (max-width:1080px) {
+    .station-info > .container{
+      width: auto;
+      margin: 10px;
+    }
+    #station-info{
+      width: auto;
+      height: auto;
+      flex-direction: column;
+    }
+    .station-info.card{
+      width: auto;
+      height: auto;
+    }
+    #station-page{
+      padding: 20px 70px;
+    }
+    .station-info > div > .card-image{
+      border-radius: 12px;
+      margin-bottom: 30px;
+      height:auto;
+      width:100%;
+    }
+  }

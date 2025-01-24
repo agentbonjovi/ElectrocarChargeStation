@@ -8,10 +8,13 @@ import { ROUTES, ROUTE_LABELS } from "../../Routes";
 import { StationCard } from "../../components/StationCard/StationCard.tsx";
 import { useNavigate } from "react-router-dom";
 import { STATIONS_MOCK } from "../../modules/mock";
+import { useDispatch } from "react-redux";
+import { setStationNameAction, useStationName } from "../../slices/dataSlice.ts";
 
 
 export const StationsPage: FC = () => {
-  const [station_name, setStationName] = useState("");
+  const dispatch = useDispatch()
+  const station_name = useStationName()
   const [loading, setLoading] = useState(false);
   const [stations, setStations] = useState<IStation[]>([]);
   const navigate = useNavigate();
@@ -47,7 +50,7 @@ export const StationsPage: FC = () => {
       
       <InputField
         value={station_name}
-        setValue={(value) => setStationName(value)}
+        setValue={(value) => dispatch(setStationNameAction(value))}
         loading={loading}
         onSubmit={handleSearch}
       />
