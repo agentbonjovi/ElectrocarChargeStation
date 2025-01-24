@@ -1,0 +1,36 @@
+#station-info{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1110px;
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+  }
+  .bold{
+    font-weight: bold;
+  }
+  .station-info > .card-body{
+    text-wrap:wrap;
+    width: auto;
+  }
+  .station-info > .container{
+    width: 500px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .station-info > div > .card-image{
+    border-radius: 12px;
+    margin-bottom: 30px;
+    height:270px;
+    width:440px;
+  }
+  
+  .largeText{
+    font-size: 36px;
+  }
+  
+  #station-info-page{
+    padding-bottom: 50px;
+  }

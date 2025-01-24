@@ -1,0 +1,17 @@
+#home-page > .row{
+    display: flex;
+    margin-top: 150px;
+    padding-bottom: 20px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.CarouselImage{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    display: none;
+}

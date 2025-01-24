@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    padding: 20px;
+    background: #3E8ABF;
+    text-align: center;
+    align-items: center;
+    border-radius: 0 0 36px 36px;
+    justify-content: center;
+    
+}
+.navbar-brand{
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    font-family: "Crimson Text";
+}
+.nav-link{
+    color: white;
+    font-size: 25px;
+}
+#logo-img{
+    width: 100px;
+    height: normal;
+}
