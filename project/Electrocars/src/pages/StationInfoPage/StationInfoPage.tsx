@@ -1,7 +1,7 @@
 import "./StationInfoPage.css";
 import { FC, useEffect, useState } from "react";
 import { BreadCrumbs } from "../../components/BreadCrumbs/BreadCrumbs";
-import { ROUTES, ROUTE_LABELS } from "../../Routes";
+import { ROUTE_LABELS } from "../../Routes";
 import { useParams } from "react-router-dom";
 import { IStation, getStationById } from "../../modules/ElectrocarsAPI";
 import { Container, Card } from "react-bootstrap";
@@ -29,7 +29,7 @@ export const StationInfoPage: FC = () => {
     <Container id="station-info-page">
       <BreadCrumbs
         crumbs={[
-          { label: ROUTE_LABELS.STATIONS, path: ROUTES.STATIONS },
+          { label: ROUTE_LABELS.STATIONS, path: "../stations" },
           { label: pageData?.short_name || "Станция" },
         ]}
       />
@@ -39,7 +39,7 @@ export const StationInfoPage: FC = () => {
             className="card-image"
             src={pageData?.photo_url || DEFAULT_PHOTO_URL}
           />
-          <Card.Title className="largeText">{pageData?.full_name || 'Метеостанция'}</Card.Title>
+          <Card.Title className="largeText">{pageData?.full_name || 'Зарядная станция'}</Card.Title>
         </Container>
         <Card.Body className="card-body">
           <Card.Text className="bold">Адрес станции:</Card.Text>

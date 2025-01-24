@@ -2,15 +2,14 @@ import "./StationsPage.css";
 import { FC, useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { IStation, getStationsByName } from "../../modules/ElectrocarsAPI";
-import { InputField } from "../../components/InputField/InputField.tsx";
-import { BreadCrumbs } from "../../components/BreadCrumbs/BreadCrumbs.tsx";
-import { ROUTES, ROUTE_LABELS } from "../../Routes";
-import { StationCard } from "../../components/StationCard/StationCard.tsx";
+import { InputField } from "../../components/InputField/InputField";
+import { BreadCrumbs } from "../../components/BreadCrumbs/BreadCrumbs";
+import { ROUTE_LABELS } from "../../Routes";
+import { StationCard } from "../../components/StationCard/StationCard";
 import { useNavigate } from "react-router-dom";
 import { STATIONS_MOCK } from "../../modules/mock";
-import { useDispatch } from "react-redux";
-import { setStationNameAction, useStationName } from "../../slices/dataSlice.ts";
-
+import {useDispatch} from "react-redux";
+import { setStationNameAction, useStationName } from "../../slices/dataSlice";
 
 export const StationsPage: FC = () => {
   const dispatch = useDispatch()
@@ -35,7 +34,7 @@ export const StationsPage: FC = () => {
       })
   };
   const handleCardClick = (id: number) => {
-    navigate(`${ROUTES.STATIONS}/${id}`);
+    navigate(`/stations/${id}`);
   };
 
   useEffect(()=>{

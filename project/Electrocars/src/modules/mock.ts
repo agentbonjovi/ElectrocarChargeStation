@@ -6,7 +6,7 @@ export const STATIONS_MOCK: IStationsResult = {
     stations:[
         {
             id:0,
-            photo_url:'/0.png',
+            photo_url:'https://agentbonjovi.github.io/ElectrocarChargeStation/0.png',
             short_name:'Энергия Москвы',
             full_name:'Зарядная станция "Энергия Москвы"',
             address:'115054, г.Москва, ул. Бахрушина, 20',
@@ -15,7 +15,7 @@ export const STATIONS_MOCK: IStationsResult = {
         },
         {
             id:1,
-            photo_url:'/1.png',
+            photo_url:'https://agentbonjovi.github.io/ElectrocarChargeStation/1.png',
             short_name:'Фора Charging Station',
             full_name:'Зарядная станция "Фора"',
             address:'142770, г.Москва, Коммунарка, стоянка гипермаркета "Глобус"',
@@ -24,7 +24,7 @@ export const STATIONS_MOCK: IStationsResult = {
         },
         {
             id:2,
-            photo_url:'/2.png',
+            photo_url:'https://agentbonjovi.github.io/ElectrocarChargeStation/2.png',
             short_name:'EV-Time Charging Station',
             full_name:'Зарядная станция "EV-Time"',
             address:'121353, г.Москва, МКАД, 51-й километр',
@@ -33,7 +33,7 @@ export const STATIONS_MOCK: IStationsResult = {
         },
         {
             id:3,
-            photo_url:'/3.png',
+            photo_url:'https://agentbonjovi.github.io/ElectrocarChargeStation/3.png',
             short_name:'"МосЭнерго" Charging Station',
             full_name:'Зарядная станция "МосЭнерго"',
             address:'119048, Москва, ул. Савельева',
@@ -43,4 +43,4 @@ export const STATIONS_MOCK: IStationsResult = {
     ],
 }
 
-export const DEFAULT_PHOTO_URL: string = "/no_photo.png"
+export const DEFAULT_PHOTO_URL: string = "https://agentbonjovi.github.io/ElectrocarChargeStation/no_photo.png"
