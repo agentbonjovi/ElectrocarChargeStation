@@ -14,25 +14,25 @@ export const HomePage: FC = () => {
           </p>
           <Carousel className="Carousel">
             <Carousel.Item className="CaruselItem">
-              <img className="CarouselImage" src="https://agentbonjovi.github.io/ElectrocarChargeStation/0.png"/>
+              <img className="CarouselImage" src="/0.png"/>
               <Carousel.Caption>
                 <h3>ул. Бахрушина</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="CaruselItem">
-              <img className="CarouselImage" src="https://agentbonjovi.github.io/ElectrocarChargeStation/1.png"/>
+              <img className="CarouselImage" src="/1.png"/>
               <Carousel.Caption>
                 <h3>ул. Коммунарка</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="CaruselItem">
-            <img className="CarouselImage" src="https://agentbonjovi.github.io/ElectrocarChargeStation/2.png"/>
+            <img className="CarouselImage" src="/2.png"/>
               <Carousel.Caption>
                 <h3>МКАД, 51-й километр</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="CaruselItem">
-              <img className="CarouselImage" src="https://agentbonjovi.github.io/ElectrocarChargeStation/3.png"/>
+              <img className="CarouselImage" src="/3.png"/>
               <Carousel.Caption>
                 <h3>ул. Савельева</h3>
               </Carousel.Caption>

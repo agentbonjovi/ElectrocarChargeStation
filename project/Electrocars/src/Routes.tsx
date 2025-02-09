@@ -1,9 +1,19 @@
 export const ROUTES = {
-  HOME: "https://agentbonjovi.github.io/ElectrocarChargeStation/",
-  STATIONS: "https://agentbonjovi.github.io/ElectrocarChargeStation/#/stations",
+  HOME: "/",
+  STATIONS: "/stations",
+  LOGIN: "/login",
+  REGISTRATION: "/registration",
+  REPORTS:"/reports",
+  PROFILE:"/user",
+  FORBIDDEN: "/404",
 }
 export type RouteKeyType = keyof typeof ROUTES;
 export const ROUTE_LABELS: {[key in RouteKeyType]: string} = {
   HOME: "Главная",
   STATIONS: "Станции",
+  LOGIN: "Войти",
+  REGISTRATION: "Регистрация",
+  REPORTS: "Отчеты",
+  PROFILE: "Профиль",
+  FORBIDDEN: "Страница 404",
 };

@@ -1,9 +1,9 @@
 export interface IStation {
     id: number;
     short_name: string;
-    full_name?: string;
+    full_name: string;
     photo_url?: string;
-    address?: string;
+    address: string;
     description?: string;
     worktime: string;
   }

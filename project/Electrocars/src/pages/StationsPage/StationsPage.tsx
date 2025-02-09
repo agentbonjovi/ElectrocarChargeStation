@@ -1,40 +1,42 @@
 import "./StationsPage.css";
 import { FC, useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
-import { IStation, getStationsByName } from "../../modules/ElectrocarsAPI";
 import { InputField } from "../../components/InputField/InputField";
 import { BreadCrumbs } from "../../components/BreadCrumbs/BreadCrumbs";
-import { ROUTE_LABELS } from "../../Routes";
+import { ROUTE_LABELS, ROUTES } from "../../Routes";
 import { StationCard } from "../../components/StationCard/StationCard";
 import { useNavigate } from "react-router-dom";
 import { STATIONS_MOCK } from "../../modules/mock";
-import {useDispatch} from "react-redux";
-import { setStationNameAction, useStationName } from "../../slices/dataSlice";
+import { useAppDispatch } from "../../store/index.ts";
+import { useStations } from "../../store/stations";
+import { useUserGroup } from "../../store/user";
+import { getStations, stationsActions } from "../../store/stations/slice";
+import { dataActions, useStationName } from "../../store/data";
+import { ReportCard } from "../../components/ReportCard/ReportCard";
 
 export const StationsPage: FC = () => {
-  const dispatch = useDispatch()
-  const station_name = useStationName()
+  const dispatch = useAppDispatch();
+  const station_name = useStationName();
   const [loading, setLoading] = useState(false);
-  const [stations, setStations] = useState<IStation[]>([]);
+  const stations = useStations();
+  const userGroup = useUserGroup();
   const navigate = useNavigate();
 
   const handleSearch = () => {
     setLoading(true);
-    getStationsByName(station_name)
-      .then((response) => {
-        setStations(
-          response.stations
-        );
-        setLoading(false);
+    dispatch(getStations(station_name))
+      .then(()=>{
+        setLoading(false)
       })
-      .catch(() => {
-        setStations(STATIONS_MOCK.stations.filter((item)=>
-        item.short_name.toLocaleLowerCase().search(station_name.toLocaleLowerCase())>=0))
-        setLoading(false);
+      .catch(()=>{
+        dispatch(stationsActions.setStationsList(STATIONS_MOCK.stations.filter((item)=>
+          item.short_name.toLocaleLowerCase().search(station_name.toLocaleLowerCase())>=0)))
+        setLoading(false)
       })
-  };
-  const handleCardClick = (id: number) => {
-    navigate(`/stations/${id}`);
+  }
+
+  const handleCardClick = (id?: number) => {
+    navigate(`${ROUTES.STATIONS}/${id}`);
   };
 
   useEffect(()=>{
@@ -49,7 +51,7 @@ export const StationsPage: FC = () => {
       
       <InputField
         value={station_name}
-        setValue={(value) => dispatch(setStationNameAction(value))}
+        setValue={(value) => dispatch(dataActions.setStationName(value))}
         loading={loading}
         onSubmit={handleSearch}
       />
@@ -62,7 +64,7 @@ export const StationsPage: FC = () => {
       {!loading &&
         (!stations.length ? (
           <div>
-            <h1>К сожалению, ничего не найдено :(</h1>
+            <h1>Ничего не найдено</h1>
           </div>
         ) : (
           <Row xs={1} sm={2} md={3} className="g-4">
@@ -77,6 +79,9 @@ export const StationsPage: FC = () => {
           </Row>
         ))}
       </Col>
+      {userGroup!='guest' && (<Col>
+        <ReportCard></ReportCard>
+      </Col>)}
     </Container>
   );
 };
