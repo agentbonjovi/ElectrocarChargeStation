@@ -29,10 +29,10 @@
         padding-right: 0px;
     }
     .navbar-brand{
-        font-size: 20px;
+        font-size: 18px;
         text-wrap: wrap;
     }
     .nav-link{
-        font-size: 13px;
+        font-size: 12px;
     }
 }
