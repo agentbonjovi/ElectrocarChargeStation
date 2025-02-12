@@ -1,3 +1,7 @@
 
 /node_modules
 /project/Electrocars/src-tauri
+project/Electrocars/cert.key
+project/Electrocars/cert.crt
+project/Electrocars/ca.key
+project/Electrocars/ca.crt
