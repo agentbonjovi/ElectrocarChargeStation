@@ -102,7 +102,7 @@ export const ReportPage: FC = () => {
               type="image"
               id="bin-image"
               alt="Удалить"
-              src="http://localhost:9000/weather-station-images/bin_icon.png"
+              src="http://localhost:9000/bucket1/crocodile.png"
               onClick={onDeleteReport}
             />}
           </div>

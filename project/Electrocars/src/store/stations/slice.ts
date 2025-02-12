@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api, station, stations } from "../../api"
 import { STATIONS_MOCK } from "../../modules/mock"
+import { data } from "react-router-dom"
 
 const stationsSlice = createSlice({
     name: "stations",
@@ -11,6 +12,9 @@ const stationsSlice = createSlice({
         stationInfo: null as station|null
     },
     reducers: {
+        clearStationInfo(state){
+            state.stationInfo = null
+        },
         setCurrentReport(state, {payload}) {
             state.currentReport = payload
         },
@@ -58,6 +62,9 @@ const stationsSlice = createSlice({
         builder.addCase(deleteStationFromReport.fulfilled,(state)=>{
             state.stationsCount -= 1
         })
+        builder.addCase(createStation.fulfilled,(state,action)=>{
+            state.stationInfo = action.payload
+        })
     }
 })
 
@@ -76,8 +83,30 @@ export const deleteStationFromReport = createAsyncThunk<void,{reportID:string,st
     'stations/deleteFromReport', async (data) =>
     api.stationsReports.stationsReportsRemoveStationDelete(data.reportID,data.stationID).then(()=>{return})
 )
-
 export const putPower = createAsyncThunk<void,{reportID:string,stationID:string,power:number}>(
     'stations/putPower', async (data) =>
     api.stationsReports.stationsReportsPutPowerUpdate(data.reportID,data.stationID,data.power).then(()=>{return})
 )
+export const deleteStation = createAsyncThunk<void,string>(
+    'stations/delete', async (id) =>
+    api.stations.stationsDelete(id).then(()=>{return})
+)
+export const createStation = createAsyncThunk<station,station>(
+    'stations/create', async (station) =>
+    api.stations.stationsCreate(station).then(({data})=>data)
+)
+export const changeStation = createAsyncThunk<void,{id:string,station:station}>(
+    'stations/change', async ({id,station}) =>
+    api.stations.stationsUpdate(id,station).then(()=>{return})
+)
+export const addPic = createAsyncThunk<void, { id: string; file: File }>(
+    "stations/addPic",
+    async ({ id, file }) => {
+        const formData = new FormData();
+        formData.append("pic", file); // Добавляем файл в FormData
+
+        return api.stations.stationsAddPicCreate(id, formData).then(() => {
+            return;
+        });
+    }
+);

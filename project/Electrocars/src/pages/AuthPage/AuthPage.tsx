@@ -14,12 +14,9 @@ export const AuthPage: FC = () => {
 
   const submitUser = async (event: FormEvent) => {
     event.preventDefault();
-    try {
-        await dispatch(getUser({username, password })).unwrap();
-        navigate(`${ROUTES.STATIONS}`);
-    } catch (error) {
-        console.log("Неправильный логин или пароль");
-    }
+    dispatch(getUser({username, password}))
+    navigate(ROUTES.STATIONS) 
+
 };
 
   return (
@@ -31,6 +28,7 @@ export const AuthPage: FC = () => {
             <Form.Group className="mb-3" controlId="formLogin">
                 <Form.Label>Логин</Form.Label>
                 <Form.Control
+                    required
                     type="text"
                     placeholder="Введите логин"
                     value={username}
@@ -41,6 +39,7 @@ export const AuthPage: FC = () => {
             <Form.Group className="mb-3" controlId="formPassword">
                 <Form.Label>Пароль</Form.Label>
                 <Form.Control
+                    required
                     type="password"
                     placeholder="Введите пароль"
                     value={password}

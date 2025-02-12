@@ -10,6 +10,9 @@ import { AllReportsPage } from "./pages/AllReportsPage/AllReportsPage.tsx";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage.tsx";
 import { ROUTES } from "./Routes.tsx";
 import { ForbiddenPage } from "./pages/403Page/ForbiddenPage.tsx";
+import { NotFoundPage } from "./pages/404Page/NotFoundPage.tsx";
+import { StationsModPage } from "./pages/StationsModPage/StationsModPage.tsx";
+import { ChangeStationPage } from "./pages/ChangeStationPage/ChangeStationPage.tsx";
 
 
 function App() {
@@ -25,7 +28,10 @@ function App() {
         <Route path={`${ROUTES.REPORTS}/:id`} element={<ReportPage />} />
         <Route path={`${ROUTES.REPORTS}`} element={<AllReportsPage />} />
         <Route path={`${ROUTES.PROFILE}`} element={<ProfilePage />} />
+        <Route path={`${ROUTES.STATIONSMOD}`} element={<StationsModPage />} />
         <Route path={`${ROUTES.FORBIDDEN}`} element={<ForbiddenPage />} />
+        <Route path={`${ROUTES.CHANGESTATION}/:id`} element={<ChangeStationPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

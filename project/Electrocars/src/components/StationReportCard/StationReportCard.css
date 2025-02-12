@@ -13,6 +13,9 @@
 }
 
 .power-input{
+    color:black;
+    margin-left: 10px;
+    margin-right: 10px;
     border:none;
     background:#FFFFFF;
     border-radius: 12px;

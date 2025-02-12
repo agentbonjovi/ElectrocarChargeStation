@@ -1,6 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api, report, temperatureReport } from "../../api"
 
+
+const filterByUser = (reports:report[],username:string) => {
+    let filteredReports: report[]  = Array()
+    for (let index = 0; index < reports.length; index++) {
+        const report = reports[index];
+        if (report.creator_id?.startsWith(username)) filteredReports.push(report)
+    }
+    return filteredReports
+}
+
 const reportsSlice = createSlice({
     name: "reports",
     initialState: {
@@ -9,6 +19,7 @@ const reportsSlice = createSlice({
         status: "",
         startDate: "",
         endDate: "",
+        creatorName: "",
     },
     reducers: {
         setReportInfo(state,{payload}){
@@ -23,10 +34,13 @@ const reportsSlice = createSlice({
         setEndDate(state,{payload}){
             state.endDate = payload
         },
+        setCreatorName(state,{payload}){
+            state.creatorName = payload
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(getReports.fulfilled,(state,action)=>{
-            state.reports = action.payload
+            state.reports = filterByUser(action.payload,state.creatorName)
         })
         builder.addCase(getReportInfo.fulfilled,(state,action)=>{
             state.reportInfo = action.payload
@@ -52,3 +66,6 @@ export const formReport = createAsyncThunk<void,string>('reports/form',async (id
 
 export const deleteReport = createAsyncThunk<void,string>('reports/delete', async (id)=>
     api.reports.reportsDeleteDelete(id).then(()=>{return}))
+
+export const confirmReport = createAsyncThunk<void,{id:string,data:0|1}>('report/confirm',async (data) =>
+    api.reports.reportsConfirmUpdate(data.id,data.data).then(()=>{return}))

@@ -66,6 +66,10 @@ export interface PowerReports {
    * @max 2147483647
    */
   sum_power?: number | null;
+  /**
+   * QR code
+   */
+  qr?: string;
 }
 
 export interface StationReport {
@@ -214,7 +218,7 @@ export class HttpClient<SecurityDataType = unknown> {
   private format?: ResponseType;
 
   constructor({ securityWorker, secure, format, ...axiosConfig }: ApiConfig<SecurityDataType> = {}) {
-    this.instance = axios.create({ ...axiosConfig, baseURL: axiosConfig.baseURL || "http://0.0.0.0:8000" });
+    this.instance = axios.create({ ...axiosConfig, baseURL: axiosConfig.baseURL || "http://127.0.0.1:8000" ,withCredentials:true});
     this.secure = secure;
     this.format = format;
     this.securityWorker = securityWorker;
@@ -571,7 +575,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request POST:/stations/{id}/add-pic/
      * @secure
      */
-    stationsAddPicCreate: (id: string, data: File, params: RequestParams = {}) =>
+    stationsAddPicCreate: (id: string, data: FormData, params: RequestParams = {}) =>
       this.request<void, any>({
         path: `/stations/${id}/add-pic/`,
         method: "POST",

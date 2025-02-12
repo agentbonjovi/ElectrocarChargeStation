@@ -6,11 +6,12 @@
     gap: 25px;
     padding: 14px 21px 10px 21px;
     width: 304px;
-    height: auto;
+    height: 190px;
     margin-top:40px;
 }
 .report-card > .card-body{
     padding: 0;
+    margin-top: 55px;
 }
 .report-card > .card-body > button{
     padding: 0;
@@ -29,7 +30,8 @@
     --bs-btn-disabled-color:  black;
     --bs-btn-disabled-bg: #DFE1E7;
     --bs-btn-disabled-border-color: #DFE1E7;
+    margin-bottom: 70px;
 }
 .report-card > .card-body > .textStyle{
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }

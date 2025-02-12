@@ -41,7 +41,7 @@ export const Navigation: FC = () => {
           {userGroup != "guest" &&
           <Nav.Link as={Link} to={ROUTES.REPORTS}>Отчеты</Nav.Link>
           }
-          <Nav.Link style={{marginRight: "50px"}} as={Link} to={ROUTES.STATIONS}>Зарядные станции</Nav.Link>
+          <Nav.Link style={{marginRight: "50px"}} as={Link} to={(userGroup=="power_analitic")?ROUTES.STATIONSMOD:ROUTES.STATIONS}>Зарядные станции</Nav.Link>
           {
             userGroup == "guest" ?
             (<Nav.Link as={Link} to={ROUTES.REGISTRATION}>Регистрация</Nav.Link>):

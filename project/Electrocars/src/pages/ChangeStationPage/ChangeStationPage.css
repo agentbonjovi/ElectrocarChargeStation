@@ -1,0 +1,31 @@
+.change-station-page{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.change-stations-header {
+    text-align: center;
+    padding: 20px;
+    background: #ECEEF2;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.change-stations-body {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.change-station-page h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+}

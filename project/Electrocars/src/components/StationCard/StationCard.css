@@ -2,6 +2,7 @@
     padding: 10px;
     gap:0px;
     margin-bottom: 40px;
+    height: 400px;
 }
 .loadingBg {
     z-index: 999;
@@ -35,6 +36,7 @@
     flex-direction: column;
     text-align: center;
     text-wrap: wrap;
+    justify-content: space-evenly;
 }
 .add-btn{
     background: #ECEEF2;

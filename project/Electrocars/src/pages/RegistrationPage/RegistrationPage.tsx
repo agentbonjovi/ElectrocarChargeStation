@@ -29,6 +29,7 @@ export const RegistrationPage: FC = () => {
             <Form.Group className="mb-3" controlId="formLogin">
                 <Form.Label>Логин</Form.Label>
                 <Form.Control
+                    required
                     type="text"
                     placeholder="Введите логин"
                     value={login}
@@ -39,6 +40,7 @@ export const RegistrationPage: FC = () => {
             <Form.Group className="mb-3" controlId="formPassword">
                 <Form.Label>Пароль</Form.Label>
                 <Form.Control
+                    required
                     type="password"
                     placeholder="Введите пароль"
                     value={password}
@@ -48,6 +50,7 @@ export const RegistrationPage: FC = () => {
             <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
+                    required
                     type="email"
                     placeholder="Введите email"
                     value={email}

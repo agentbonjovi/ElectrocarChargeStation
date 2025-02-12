@@ -13,10 +13,14 @@
 }
 
 .container > .card-title{
-    margin-left: 10px;
     margin-top: 10px;
 }
 
+.reports-header > .container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .reports-filters{
     display: flex;
     gap: 20px;
@@ -25,9 +29,15 @@
 
 #status-filter{
     border-radius: 6px;
+    background: lightgray;
 }
 .date-filter{
     border-radius: 6px;
+    background: lightgray;
+}
+.creator-filter{
+    border-radius: 6px;
+    background: lightgray;
 }
 .header-card{
     display: flex;
@@ -50,6 +60,7 @@
     width: 100px;
     margin-bottom: 0;
     text-align: center;
+    background-color: #ECEEF2;
 }
 .report-card-status{
     width: 105px;
@@ -62,7 +73,10 @@
     text-align: center;
 }
 .report-card-temperature{
-    width: 100px;
+    width: 110px;
     text-align: center;
     margin-bottom: 0;
+}
+.reports-info{
+    margin-bottom: 100px;
 }

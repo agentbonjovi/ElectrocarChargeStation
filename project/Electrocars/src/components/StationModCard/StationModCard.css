@@ -1,0 +1,49 @@
+.station-mod-card {
+    display: flex;
+    flex-direction: row; /* Горизонтальное расположение */
+    align-items: center;
+    width: auto; /* Подстраивается под содержимое */
+    height: auto;
+    background: #ECEEF2;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    gap: 20px; /* Отступ между изображением и текстом */
+}
+
+.station-mod-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+#card-body-mod-arnold-gitker{
+    padding: 0;
+}
+.station-mod-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+#station-mod-full_name{
+    width: 100px;
+}
+#station-mod-work_time{
+    width: 150px;
+    margin-bottom: 0;
+    text-align: center;
+}
+#station-mod-description{
+    width: 400px;
+}
+.station-mod-body > .card-title,
+.station-mod-body > .card-text {
+    margin-bottom: 0;
+}
+
+.station-controls-panel {
+    display: flex;
+    gap: 10px;
+}

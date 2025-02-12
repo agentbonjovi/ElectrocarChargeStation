@@ -1,0 +1,23 @@
+.station-input-field{
+    background-color: #f0f0f0;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-top: 15px;
+}
+.station-input-field h5{
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+.station-input-field input,textarea{
+    width: 300px;
+    padding-left: 10px;
+    color:black;
+    margin-right:15px;
+    background-color: #f9f9f9;
+    border-width: 1px;
+    border-radius: 10px;
+}

@@ -15,3 +15,6 @@ export const useStartDate = () =>
 
 export const useEndDate = () =>
     useSelector((state:RootState) => state.reports.endDate)
+
+export const useCreatorName = () =>
+    useSelector((state:RootState) => state.reports.creatorName)
