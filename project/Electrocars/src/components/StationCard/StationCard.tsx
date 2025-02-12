@@ -6,14 +6,14 @@ import { DEFAULT_PHOTO_URL } from "../../modules/mock";
 interface ICardProps {
   photo_url?: string;
   short_name: string;
-  worktime: string;
+  work_time: string;
   imageClickHandler: () => void;
 }
 
 export const StationCard: FC<ICardProps> = ({
   photo_url,
   short_name,
-  worktime,
+  work_time,
   imageClickHandler,
 }) => {
 
@@ -29,7 +29,7 @@ export const StationCard: FC<ICardProps> = ({
       />
       <Card.Body className="station-card-body">
         <Card.Title>{short_name}</Card.Title>
-        <Card.Text>Время работы: {worktime}</Card.Text>
+        <Card.Text>Время работы: {work_time}</Card.Text>
       </Card.Body>
     </Card>
   );
