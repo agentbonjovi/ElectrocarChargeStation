@@ -1,2 +1,6 @@
 
 /node_modules
+project/Electrocars/ca.crt
+project/Electrocars/ca.key
+project/Electrocars/cert.crt
+project/Electrocars/cert.key
