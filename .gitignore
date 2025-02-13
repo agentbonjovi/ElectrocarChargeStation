@@ -4,3 +4,5 @@ project/Electrocars/ca.crt
 project/Electrocars/ca.key
 project/Electrocars/cert.crt
 project/Electrocars/cert.key
+/project/Electrocars/src-tauri-backup
+/project/Electrocars/src-tauri/gen/android
