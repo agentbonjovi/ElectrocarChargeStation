@@ -5,3 +5,4 @@ project/Electrocars/cert.key
 project/Electrocars/cert.crt
 project/Electrocars/ca.key
 project/Electrocars/ca.crt
+/project/Electrocars/src-tauri-backup
