@@ -10,7 +10,7 @@ interface ICardProps {
   id?: number;
   photo_url?: string|null;
   short_name: string;
-  worktime?: string;
+  work_time?: string|null;
   imageClickHandler: () => void;
 }
 
@@ -18,7 +18,7 @@ export const StationCard: FC<ICardProps> = ({
   id,
   photo_url,
   short_name,
-  worktime,
+  work_time,
   imageClickHandler,
 }) => {
   const dispatch = useAppDispatch();
@@ -45,7 +45,7 @@ export const StationCard: FC<ICardProps> = ({
       />
       <Card.Body className="station-card-body">
         <Card.Title>{short_name}</Card.Title>
-        <Card.Text>Время работы: {worktime}</Card.Text>
+        <Card.Text>Время работы: {work_time}</Card.Text>
         {userGroup!="guest" && <Button disabled={disabled} onClick={addStation} className="add-btn">Добавить</Button>}
       </Card.Body>
     </Card>

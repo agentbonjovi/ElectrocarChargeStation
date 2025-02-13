@@ -17,10 +17,10 @@ export const ReportCard: FC = () => {
     <Card className="report-card">
       <Card.Body>
         <div className="textStyle">
-          <Card.Title>Регистрация температур</Card.Title>
+          <Card.Title>Регистрация энергопотребления</Card.Title>
         </div>
         <div className="textStyle">
-            <Card.Text>Добавлено метеостанций: {stationsCount}</Card.Text>
+            <Card.Text>Добавлено станций: {stationsCount}</Card.Text>
         </div>
         {currentReport && <Button onClick={viewReport}>Перейти к заполнению</Button>}
       </Card.Body>

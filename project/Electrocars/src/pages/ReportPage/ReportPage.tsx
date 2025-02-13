@@ -59,7 +59,7 @@ export const ReportPage: FC = () => {
     <Container id="report-info-page">
       <Card className="report-info">
         <Container className="report-header">
-          <Card.Title className="largeText">Регистрация температур</Card.Title>
+          <Card.Title className="largeText">Регистрация энергопотребления</Card.Title>
           <div className="date-input-block">
                 <span>Дата:  </span>
                 <input className="report-date-input" placeholder={"01.01.2024"}
@@ -96,7 +96,7 @@ export const ReportPage: FC = () => {
         </Container>
         <Card.Body className="report-body">
           <div className="header-with-bin">
-            <CardText>Добавленные метеостанции:</CardText>
+            <CardText>Добавленные станции:</CardText>
             {pageData?.status=="Draft" &&
             <input
               type="image"
