@@ -5,7 +5,7 @@ export interface IStation {
     photo_url?: string;
     address?: string;
     description?: string;
-    worktime: string;
+    work_time: string;
   }
   export interface IStationsResult {
     current_report?: number;
