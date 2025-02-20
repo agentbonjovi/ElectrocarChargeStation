@@ -1,7 +1,5 @@
 
 /node_modules
-/project/Electrocars/src-tauri
-/project/Electrocars/src-tauri-backup
 project/Electrocars/ca.crt
 project/Electrocars/ca.key
 project/Electrocars/cert.crt

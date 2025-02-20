@@ -8,7 +8,7 @@ plugins: [react(), mkcert()]
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", 
+  base: "/",
   server: {
     https:{
       key: fs.readFileSync(path.resolve(__dirname, 'cert.key')),
