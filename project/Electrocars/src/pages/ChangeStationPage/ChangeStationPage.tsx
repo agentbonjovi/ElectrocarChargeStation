@@ -39,8 +39,9 @@ export const ChangeStationPage: FC = () =>{
             }))
                 .unwrap()
                 .then((createdStation) => {
+                    
                     if (image instanceof File) {
-                        dispatch(addPic({ id: createdStation.id, file: image }));
+                        dispatch(addPic({ id: createdStation.id?.toString() || '0', file: image }));
                     }
                 })
                 .catch((error) => {
@@ -59,7 +60,7 @@ export const ChangeStationPage: FC = () =>{
                 }
             }))
             if (image instanceof File) {
-                dispatch(addPic({id:stationInfo?.id,file:image}))
+                dispatch(addPic({ id: stationInfo?.id?.toString() || '0', file: image }));
             }
         }
         navigate(`${ROUTES.STATIONSMOD}`)

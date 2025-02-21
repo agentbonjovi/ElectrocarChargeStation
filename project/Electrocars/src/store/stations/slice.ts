@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { api, station, stations } from "../../api"
 import { STATIONS_MOCK } from "../../modules/mock"
-import { data } from "react-router-dom"
 
 const stationsSlice = createSlice({
     name: "stations",
@@ -44,7 +43,7 @@ const stationsSlice = createSlice({
             state.stationsCount = action.payload.stations_count
             state.currentReport = action.payload.current_report
         })
-        builder.addCase(getStations.rejected, (state,action)=>{
+        builder.addCase(getStations.rejected, (state)=>{
             state.stations = STATIONS_MOCK.stations
             state.stationsCount = STATIONS_MOCK.stations_count
             state.currentReport = STATIONS_MOCK.current_report
@@ -52,7 +51,7 @@ const stationsSlice = createSlice({
         builder.addCase(getStation.fulfilled,(state,action)=>{
             state.stationInfo = action.payload
         })
-        builder.addCase(getStation.rejected,(state,action)=>{
+        builder.addCase(getStation.rejected,(state)=>{
             state.stationInfo = STATIONS_MOCK.stations[0]
         })
         builder.addCase(addStationToReport.fulfilled,(state,action)=>{
